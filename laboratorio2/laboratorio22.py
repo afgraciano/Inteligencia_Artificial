@@ -52,7 +52,17 @@ media(X)
 print(media(X))
 
 #Task 4:Double the diagonal (Duplicar la diagonal)Complete la siguiente función de manera que devuelva la misma matriz recibida en X pero con su diagonal multiplicada por 2. Supongamos X es una matriz cuadrada (con el mismo número de filas y columnas).
-'''En este código, np.eye(X.shape[0]) crea una matriz de identidad del mismo tamaño que la matriz X, y luego se multiplica por 2 y se suma a X para duplicar la diagonal.'''
+'''np.diag(X) toma la matriz X y extrae su diagonal principal como un arreglo unidimensional.
+
+np.diag(np.diag(X)) toma ese arreglo unidimensional de la diagonal y crea una matriz diagonal con los mismos valores. 
+En otras palabras, convierte el arreglo de la diagonal en una matriz diagonal completa.
+
+(2 - 1) calcula el valor 1. Esto se hace simplemente para multiplicar cada elemento de la matriz diagonal por 1 para duplicar su valor.
+
+np.diag(np.diag(X) * (2 - 1)) toma la matriz diagonal completa que creamos en el paso 2 y la multiplica por 1, lo que duplica todos los valores de la diagonal principal.
+
+Finalmente, X = X + np.diag(np.diag(X) * (2 - 1)) suma la matriz X original con la matriz diagonal duplicada. Esto tiene el efecto de duplicar los valores en 
+la diagonal principal de la matriz X.'''
 
 def doublediag(X):
     # Duplica la diagonal multiplicándola por 2
