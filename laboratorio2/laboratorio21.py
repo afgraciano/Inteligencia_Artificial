@@ -109,3 +109,43 @@ print("El resultado de la sucesion fibonacci para n=36 es:",fibonacci(36))   # I
 #Este código completo calcula el n-ésimo término de la serie de Fibonacci. Comienza con los casos base de 0 y 1 y luego itera para calcular los términos subsiguientes hasta llegar al término n.
 
 
+#Task 4: Perfect number:Un número perfecto es un número entero positivo que es igual a la suma de sus divisores positivos, excluyendo el número mismo. Por ejemplo6=3+2+1
+'''
+Ejemplo de ejecución
+ perfecto(6)
+True
+
+ perfecto(51)
+False
+
+ perfecto(496)
+True
+'''
+
+n = 12
+n%2, n%3, n%4, n%5, n%6, n%7, n%8
+
+
+#def perfecto(n):
+    #tu codigo aqui, pista:
+    # halle todos los divisores de n y sumelos en una variable auxiliar,
+    #compare este resultado con el valor original
+
+
+def perfecto(n):
+    suma_divisores = 0
+
+    # Iterar a través de todos los números desde 1 hasta n - 1
+    for i in range(1, n):
+        # Comprobar si i es un divisor de n
+        if n % i == 0:
+            suma_divisores += i  # Sumar el divisor a la suma
+
+    # Comparar la suma de divisores con el número original
+    return suma_divisores == n
+
+perfecto(6), perfecto(51), perfecto(496)
+# Ejemplos de ejecución
+print("¿Es 6 un número perfecto?", perfecto(6))   # True
+print("¿Es 51 un número perfecto?", perfecto(51))  # False
+print("¿Es 496 un número perfecto?", perfecto(496)) # True
